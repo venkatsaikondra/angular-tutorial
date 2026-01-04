@@ -1,20 +1,23 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { ProfileComponent } from './profile/profile.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,LoginComponent ,ProfileComponent],
+  standalone: true,
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  name="venkat"
-  handleClickEvent(){
-    alert("function called")
+  title = 'angular-tutorial';
+  count: number = 0;
+  increment() {
+    this.count += 1;
   }
-  otherFunction(){
-    console.log("other Function")
+
+  decrement() {
+    this.count -= 1;
+  }
+
+  reset() {
+    this.count = 0;
   }
 }
